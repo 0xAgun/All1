@@ -164,7 +164,7 @@ def assetfinder_install():
 		subprocess.Popen(['go get -u github.com/tomnomnom/assetfinder',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		subprocess.Popen(['cp /root/go/bin/assetfinder /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-		if nuclei.returncode == 1:
+		if asset.returncode == 1:
 			pass
 		else:
 			print("Failled to Install Asssefinder")
@@ -181,7 +181,7 @@ def jq_install():
 		print("jq is Not Installed")
 		print("Installing jq")
 		subprocess.Popen(['apt-get install jq',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		if nuclei.returncode == 0:
+		if jq.returncode == 0:
 			pass
 		else:
 			print("Failled to Install jq")
