@@ -417,13 +417,13 @@ def hawk_install():
 	hawk= subprocess.Popen(['hakrawler -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 	hawk.wait()
 
-	if hawk.returncode != 0:
+	if hawk.returncode != 2:
 		print("hakrawler is Not Installed")
 		print("Installing hakrawler")
 		subprocess.Popen(['go get github.com/hakluke/hakrawler',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		subprocess.Popen(['cp /root/go/bin/hakrawler /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-		if hawk.returncode == 0:
+		if hawk.returncode == 2:
 			pass
 		else:
 			print("Failled to Install hakrawler")
