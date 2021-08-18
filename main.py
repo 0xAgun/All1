@@ -463,7 +463,7 @@ def dalfox_install():
 		subprocess.Popen(['sudo snap install dalfox',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		print("\033[32motxurls is installed")
 
-otxurls_install()
+dalfox_install()
 
 def subjs_install():
 	subjs= subprocess.Popen(['subjs -version',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
