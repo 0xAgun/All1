@@ -180,7 +180,7 @@ def jq_install():
 	if jq.returncode != 0:
 		print("jq is Not Installed")
 		print("Installing jq")
-		subprocess.Popen(['apt-get install jq',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.Popen(['apt-get install jq -y',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		if jq.returncode == 0:
 			pass
 		else:
