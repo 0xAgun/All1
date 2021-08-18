@@ -136,16 +136,16 @@ def subfinder_install():
 subfinder_install()
 
 def nuclei_install():
-	nuclei = subprocess.Popen(['nuclei',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	nuclei = subprocess.Popen(['nuclei -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 	nuclei.wait()
 
-	if nuclei.returncode != 1:
+	if nuclei.returncode != 0:
 		print("Nuclei is Not Installed")
 		print("Installing Nuclei")
 		subprocess.Popen(['GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		subprocess.Popen(['cp /root/go/bin/nuclei /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-		if nuclei.returncode == 1:
+		if nuclei.returncode == 0:
 			pass
 		else:
 			print("Failled to Install Nuclei")
