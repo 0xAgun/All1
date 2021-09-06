@@ -245,7 +245,7 @@ def meg_install():
 		print("Installing Meg")
 		subprocess.run(['go get -u github.com/tomnomnom/meg',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		subprocess.run(['cp /root/go/bin/meg /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		meg = subprocess.run(['meg -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		meg1 = subprocess.run(['meg -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 		if meg1.returncode == 0:
 			print("\033[32mMeg is installed")
