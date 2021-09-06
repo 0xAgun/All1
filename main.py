@@ -186,7 +186,7 @@ def jq_install():
 		print("jq is Not Installed")
 		print("Installing jq")
 		subprocess.run(['apt-get install jq -y',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		jq = subprocess.run(['jq --help',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		jq1 = subprocess.run(['jq --help',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		if jq1.returncode == 0:
 			print("\033[32mjq is installed")
 		else:
