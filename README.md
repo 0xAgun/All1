@@ -72,7 +72,7 @@
 ### More To Come
 - [ ] nuclei templates
 - [ ] gf patterns
-- [ ] and more
+- [ ] and more.
 
 ### All sorts of Contributions Are welcome
 
