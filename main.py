@@ -11,7 +11,7 @@ banner = '''
  						\033[31;1m|.  _   |__|__`-|.  |
  						\033[31;1m|:  |   |       |:  |
  						\033[31;1m|::.|:. |       |::.|
- 						\033[31;1m`--- ---'       `---'\033[0m \033[32;1m[1.0.8]\033[0m
+ 						\033[31;1m`--- ---'       `---'\033[0m \033[32;1m[2.1.9]\033[0m
  											\033[34;1m[by 0xAgun]\033[0m
                       
 
@@ -106,8 +106,8 @@ def dnsx_install():
 	if dnsx.returncode != 0:
 		print("Dnsx is Not Installed")
 		print("Installing Dnsx")
-		subprocess.run(['GO111MODULE=on go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		subprocess.run(['cp /root/go/bin/dnsx /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/dnsx /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		dnsx1 = subprocess.run(['dnsx',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
@@ -127,8 +127,8 @@ def subfinder_install():
 	if finder.returncode != 0:
 		print("Subfinder is Not Installed")
 		print("Installing Subfinder")
-		subprocess.run(['GO111MODULE=on go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		subprocess.run(['cp /root/go/bin/subfinder /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/subfinder /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		inder = subprocess.run(['subfinder -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		if inder.returncode == 0:
 			print("\033[32mSubfinder is installed")
@@ -146,8 +146,8 @@ def nuclei_install():
 	if nuclei.returncode != 0:
 		print("Nuclei is Not Installed")
 		print("Installing Nuclei")
-		subprocess.run(['GO111MODULE=on go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		subprocess.run(['cp /root/go/bin/nuclei /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/nuclei /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		nuclei1 = subprocess.run(['nuclei -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 		if nuclei1.returncode == 0:
@@ -166,10 +166,10 @@ def assetfinder_install():
 		print("Assetfinder is Not Installed")
 		print("Installing Assetfinder")
 		subprocess.run(['go install -v github.com/tomnomnom/assetfinder@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		subprocess.run(['cp /root/go/bin/assetfinder /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		asset = subprocess.run(['assetfinder -d',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/assetfinder /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		assets = subprocess.run(['assetfinder -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-		if asset.returncode == 0:
+		if assets.returncode == 0:
 			print("\033[32mAssetfinder is installed")
 		else:
 			print("Failled to Install Asssefinder")
@@ -203,8 +203,8 @@ def httprobe_install():
 	if probe.returncode != 0:
 		print("Httprobe is Not Installed")
 		print("Installing Httprobe")
-		subprocess.run(['go install -v github.com/tomnomnom/httprobe@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		subprocess.run(['cp /root/go/bin/httprobe /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['go install github.com/tomnomnom/httprobe@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/httprobe /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		probe1 = subprocess.run(['httprobe -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 		if probe1.returncode == 0:
@@ -224,7 +224,7 @@ def waybackurl_install():
 		print("Waybackurls is Not Installed")
 		print("Installing Waybackurls")
 		subprocess.run(['go install -v github.com/tomnomnom/waybackurls@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		subprocess.run(['cp /root/go/bin/waybackurls /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/waybackurls /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		url1 = subprocess.run(['waybackurls -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 		if url1.returncode == 0:
@@ -244,7 +244,7 @@ def meg_install():
 		print("Meg is Not Installed")
 		print("Installing Meg")
 		subprocess.run(['go install -v github.com/tomnomnom/meg@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		subprocess.run(['cp /root/go/bin/meg /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/meg /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		meg1 = subprocess.run(['meg -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 		if meg1.returncode == 0:
@@ -264,7 +264,7 @@ def gf_install():
 		print("gf is Not Installed")
 		print("Installing gf")
 		subprocess.run(['go install -v github.com/tomnomnom/gf@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		subprocess.run(['cp /root/go/bin/gf /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/gf /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		gf = subprocess.run(['gf --help',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 		if gf.returncode == 0:
@@ -284,7 +284,7 @@ def gron_install():
 		print("Gron is Not Installed")
 		print("Installing Gron")
 		subprocess.run(['go install -v github.com/tomnomnom/gron@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		subprocess.run(['cp /root/go/bin/gron /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/gron /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		gron1 = subprocess.run(['gron -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 		if gron1.returncode == 0:
@@ -317,19 +317,19 @@ def webscreenshot_install():
 ##installing waybackunifier
 
 def waybackunifier_install():
-	backfin = subprocess.run(['waybackunifier -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	backfin = subprocess.run(['chronos -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 	if backfin.returncode != 0:
-		print("waybackunifier is Not Installed")
-		print("Installing waybackunifier")
-		subprocess.run(['go install -v github.com/mhmdiaa/waybackunifier@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		subprocess.run(['cp /root/go/bin/waybackunifier /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		backfin1 = subprocess.run(['waybackunifier -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		print("chronos is Not Installed")
+		print("Installing chronos")
+		subprocess.run(['go install -v github.com/mhmdiaa/chronos@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/chronos /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		backfin1 = subprocess.run(['chronos -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 		if backfin1.returncode == 0:
-			print("\033[32mwaybackunifier is installed")
+			print("\033[32mchronos is installed")
 		else:
-			print("Failled to Install waybackunifier")
+			print("Failled to Install chronos")
 	else:
 		print("\033[32mwaybackunifier is installed")
 
@@ -379,7 +379,7 @@ def goaltdns_install():
 		print("goaltdns is Not Installed")
 		print("Installing goaltdns")
 		subprocess.run(['go install -v github.com/subfinder/goaltdns@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		subprocess.run(['cp /root/go/bin/goaltdns /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/goaltdns /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		goaltdns1 = subprocess.run(['goaltdns --help',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 		if goaltdns1.returncode == 0:
@@ -399,7 +399,7 @@ def subjack_install():
 		print("subjack is Not Installed")
 		print("Installing subjack")
 		subprocess.run(['go install -v github.com/haccer/subjack@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		subprocess.run(['cp /root/go/bin/subjack /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/subjack /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		subjack1= subprocess.run(['subjack -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 		if subjack1.returncode == 0:
@@ -419,7 +419,7 @@ def ffuf_install():
 		print("FFUF is Not Installed")
 		print("Installing FFUF")
 		subprocess.run(['go install -v github.com/ffuf/ffuf@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		subprocess.run(['cp /root/go/bin/ffuf /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/ffuf /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		ffuf1= subprocess.run(['ffuf --help',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
@@ -440,7 +440,7 @@ def hawk_install():
 		print("hakrawler is Not Installed")
 		print("Installing hakrawler")
 		subprocess.run(['go install -v github.com/hakluke/hakrawler@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		subprocess.run(['cp /root/go/bin/hakrawler /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/hakrawler /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		hawk1= subprocess.run(['hakrawler -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 		if hawk1.returncode == 2:
@@ -455,7 +455,7 @@ def hawk_install():
 
 def kxss_install():
 		subprocess.run(['go install -v github.com/Emoe/kxss@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		subprocess.run(['cp /root/go/bin/kxss /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/kxss /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		print("\033[32mKxss is installed")
 
 
@@ -468,7 +468,7 @@ def otxurls_install():
 		print("otxurls is Not Installed")
 		print("Installing otxurls")
 		subprocess.run(['go install -v github.com/lc/otxurls@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		subprocess.run(['cp /root/go/bin/otxurls /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/otxurls /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		otxurls1= subprocess.run(['otxurls -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 		if otxurls1.returncode == 0:
@@ -482,9 +482,19 @@ def otxurls_install():
 ##installing dalfox
 
 def dalfox_install():
+	df = subprocess.run(['dalfox -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if df.returncode != 0:
+		print("dalfox is Not Installed")
+		print("Installing dalfox")
 		subprocess.run(['sudo apt install snapd -y',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		subprocess.run(['sudo snap install dalfox',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		print("\033[32motxurls is installed")
+		df1 = subprocess.run(['dalfox -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		if df1.returncode == 0:
+			print("\033[32mdalfox is installed")
+		else:
+			print("Failled to Install dalfox")
+	else:
+		print("\033[32mdalfox is installed")
 
 
 ##installing subjs
@@ -495,8 +505,8 @@ def subjs_install():
 	if subjs.returncode != 0:
 		print("subjs is Not Installed")
 		print("Installing subjs")
-		subprocess.run(['GO111MODULE=on go install  -v github.com/lc/subjs@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		subprocess.run(['cp /root/go/bin/subjs /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['go install  -v github.com/lc/subjs@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/subjs /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 		subjs1= subprocess.run(['subjs -version',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 		if subjs1.returncode == 0:
@@ -510,10 +520,18 @@ def subjs_install():
 
 
 def gau_install():
-
-		subprocess.run(['GO111MODULE=on go install -v github.com/lc/gau@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-		subprocess.run(['cp /root/go/bin/gau /usr/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	gau = subprocess.run(['gau -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if gau.returncode != 0:
+		subprocess.run(['go install -v github.com/lc/gau/v2/cmd/gau@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/gau /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		gau1 = subprocess.run(['gau -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		if gau1.returncode == 0:
+			print("\033[32mgau is installed")
+		else:
+			print("Failled to Install gau")
+	else:
 		print("\033[32mgau is installed")
+
 
 
 ##installing arjun
@@ -534,7 +552,249 @@ def arjun_install():
 		print("\033[32marjun is installed")
 
 
+def godork_install():
+	gdork = subprocess.run(['go-dork -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if gdork.returncode != 0:
+		print("go-dork is Not Installed")
+		print("Installing go-dork")
+		subprocess.run(['go install -v dw1.io/go-dork@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/go-dork /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		gdork1 = subprocess.run(['go-dork -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		if gdork1.returncode == 0:
+			print("\033[32mgo-dork is installed")
+		else:
+			print("Failled to Install go-dork")
+	else:
+		print("\033[32mgau is installed")
 
+
+def githubsub_install():
+	githubsub = subprocess.run(['github-subdomains -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if githubsub.returncode != 0:
+		print("github-subdomains is Not Installed")
+		print("Installing github-subdomains")
+		subprocess.run(['go install -v github.com/gwen001/github-subdomains@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/github-subdomains /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		githubsub1 = subprocess.run(['github-subdomains -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		if githubsub1.returncode == 0:
+			print("\033[32mgithub-subdomains is installed")
+		else:
+			print("Failled to Install github-subdomains")
+	else:
+		print("\033[32mgithub-subdomains is installed")
+
+def gospider_install():
+	gospider = subprocess.run(['gospider -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if gospider.returncode != 0:
+		print("gospider is Not Installed")
+		print("Installing gospider")
+		subprocess.run(['go install -v github.com/jaeles-project/gospider@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/gospider /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		gospider1 = subprocess.run(['gospider -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		if gospider1.returncode == 0:
+			print("\033[32mgospider is installed")
+		else:
+			print("Failled to Install gospider")
+	else:
+		print("\033[32mgospider is installed")
+
+def puredns_install():
+	puredns = subprocess.run(['puredns -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if puredns.returncode != 0:
+		print("puredns is Not Installed")
+		print("Installing puredns")
+		subprocess.run(['go install -v github.com/d3mondev/puredns/v2@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/puredns /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		puredns1 = subprocess.run(['puredns -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		if puredns1.returncode == 0:
+			print("\033[32mpuredns is installed")
+		else:
+			print("Failled to Install puredns")
+	else:
+		print("\033[32mpuredns is installed")
+
+
+def gauplus_install():
+	gauplus = subprocess.run(['gauplus -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if gauplus.returncode != 0:
+		print("gauplus is Not Installed")
+		print("Installing gauplus")
+		subprocess.run(['go install -v github.com/bp0lr/gauplus@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/gauplus /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		gauplus1 = subprocess.run(['gauplus -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		if gauplus1.returncode == 0:
+			print("\033[32mgauplus is installed")
+		else:
+			print("Failled to Install gauplus")
+	else:
+		print("\033[32mgauplus is installed")
+
+
+def qsreplace_install():
+	gauplus = subprocess.run(['qsreplace -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if gauplus.returncode != 0:
+		print("qsreplace is Not Installed")
+		print("Installing qsreplace")
+		subprocess.run(['go install -v github.com/tomnomnom/qsreplace@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/qsreplace /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		gauplus1 = subprocess.run(['qsreplace -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		if gauplus1.returncode == 0:
+			print("\033[32mqsreplace is installed")
+		else:
+			print("Failled to Install qsreplace")
+	else:
+		print("\033[32mqsreplace is installed")
+
+def unfurl_install():
+	unfurl = subprocess.run(['unfurl -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if unfurl.returncode != 0:
+		print("unfurl is Not Installed")
+		print("Installing unfurl")
+		subprocess.run(['go install -v github.com/tomnomnom/unfurl@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/unfurl /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		unfurl1 = subprocess.run(['unfurl -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		if unfurl1.returncode == 0:
+			print("\033[32munfurl is installed")
+		else:
+			print("Failled to Install unfurl")
+	else:
+		print("\033[32munfurl is installed")
+
+def naabu_install():
+	naabu = subprocess.run(['naabu -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if naabu.returncode != 0:
+		print("naabu is Not Installed")
+		print("Installing naabu")
+		subprocess.run(['sudo apt install -y libpcap-dev',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/naabu /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		naabu1 = subprocess.run(['naabu -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		if naabu1.returncode == 0:
+			print("\033[32mnaabu is installed")
+		else:
+			print("Failled to Install naabu")
+	else:
+		print("\033[32mnaabu is installed")
+
+def httpx_install():
+	httpx = subprocess.run(['httpx -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if httpx.returncode != 0:
+		print("httpx is Not Installed")
+		print("Installing httpx")
+		subprocess.run(['go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/httpx /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		httpx1 = subprocess.run(['httpx -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		if httpx1.returncode == 0:
+			print("\033[32mhttpx is installed")
+		else:
+			print("Failled to Install httpx")
+	else:
+		print("\033[32mhttpx is installed")
+
+def dnsrecon_install():
+	dnsrecon = subprocess.run(['dnsrecon -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if dnsrecon.returncode != 0:
+		print("dnsrecon is Not Installed")
+		print("Installing dnsrecon")
+		subprocess.run(['git clone https://github.com/darkoperator/dnsrecon.git',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cd dnsrecon; pip3 install -r requirements.txt; sudo python3 dnsrecon/setup.py install',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		dnsrecon1 = subprocess.run(['dnsrecon -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		if dnsrecon1.returncode == 0:
+			print("\033[32mdnsrecon is installed")
+		else:
+			print("Failled to Install dnsrecon")
+	else:
+		print("\033[32mdnsrecon is installed")
+
+def sublist3r_install():
+	sublist3r = subprocess.run(['sublist3r -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if sublist3r.returncode != 0:
+		print("sublist3r is Not Installed")
+		print("Installing sublist3r")
+		subprocess.run(['git clone https://github.com/aboul3la/Sublist3r.git',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cd Sublist3r; pip3 install -r requirements.txt; sudo python3 setup.py install',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		sublist3r1 = subprocess.run(['sublist3r -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		if sublist3r1.returncode == 0:
+			print("\033[32msublist3r is installed")
+		else:
+			print("Failled to Install sublist3r")
+	else:
+		print("\033[32msublist3r is installed")
+
+def massdns_install():
+	massdns = subprocess.run(['massdns -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if massdns.returncode != 0:
+		print("massdns is Not Installed")
+		print("Installing massdns")
+		subprocess.run(['git clone https://github.com/blechschmidt/massdns.git',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cd massdns; make; cp bin/massdns /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		massdns1 = subprocess.run(['massdns -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		if massdns1.returncode == 0:
+			print("\033[32mmassdns is installed")
+		else:
+			print("Failled to Install massdns")
+	else:
+		print("\033[32mmassdns is installed")
+
+def findomain_install():
+	findomain = subprocess.run(['findomain -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if findomain.returncode != 0:
+		print("findomain is Not Installed")
+		print("Installing findomain")
+		subprocess.run(['sudo wget https://github.com/findomain/findomain/releases/latest/download/findomain-linux -O /usr/local/bin/findomain',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['sudo chmod +x /usr/local/bin/findomain',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		massdns1 = subprocess.run(['findomain -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		if massdns1.returncode == 0:
+			print("\033[32mfindomain is installed")
+		else:
+			print("Failled to Install findomain")
+	else:
+		print("\033[32mfindomain is installed")
+
+
+def gowitness_install():
+	gowitness = subprocess.run(['gowitness -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if gowitness.returncode != 0:
+		print("gowitness is Not Installed")
+		print("Installing gowitness")
+		subprocess.run(['go install -v github.com/sensepost/gowitness@latest',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cp ~/go/bin/gowitness /usr/local/bin',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		massdns1 = subprocess.run(['gowitness -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		if massdns1.returncode == 0:
+			print("\033[32mgowitnessis installed")
+		else:
+			print("Failled to Install gowitness")
+	else:
+		print("\033[32mgowitness is installed")
+
+def dnsgen_install():
+	sublist3r = subprocess.run(['dnsgen --help',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if sublist3r.returncode != 0:
+		print("dnsgen is Not Installed")
+		print("Installing dnsgen")
+		subprocess.run(['https://github.com/ProjectAnte/dnsgen.git',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		subprocess.run(['cd dnsgen; pip3 install -r requirements.txt; sudo python3 setup.py install',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		sublist3r1 = subprocess.run(['dnsgen --help',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		if sublist3r1.returncode == 0:
+			print("\033[32mdnsgen is installed")
+		else:
+			print("Failled to Install dnsgen")
+	else:
+		print("\033[32mdnsgen is installed")
+
+def amass_install():
+	amass = subprocess.run(['amass -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+	if amass.returncode != 0:
+		print("amass is Not Installed")
+		print("Installing amass")
+		subprocess.run(['sudo snap install amass',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		amass1 = subprocess.run(['amass -h',], shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		if amass1.returncode == 0:
+			print("\033[32mamass is installed")
+		else:
+			print("Failled to Install amass")
+	else:
+		print("\033[32mamass is installed")
 
 
 if __name__ == "__main__":
@@ -567,7 +827,22 @@ if __name__ == "__main__":
 	gau_install()
 	arjun_install()
 	webscreenshot_install()
-
+	godork_install()
+	githubsub_install()
+	gospider_install()
+	puredns_install()
+	gauplus_install()
+	qsreplace_install()
+	unfurl_install()
+	naabu_install()
+	httpx_install()
+	dnsrecon_install()
+	sublist3r_install()
+	massdns_install()
+	findomain_install()
+	gowitness_install()
+	dnsgen_install()
+	amass_install()
 
 
 
