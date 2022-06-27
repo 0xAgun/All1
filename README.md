@@ -74,6 +74,15 @@
 - [ ] gf patterns
 - [ ] and more.
 
+## How to Use
+
+To start the script, run the following command, need to run sudo
+
+```py
+sudo python3 script.py
+```
+
+
 ### All sorts of Contributions Are welcome
 
 ## 🔗 Links
