@@ -79,7 +79,7 @@
 To start the script, run the following command, need to run sudo
 
 ```py
-sudo python3 script.py
+sudo python3 main.py
 ```
 
 
