@@ -565,7 +565,7 @@ def godork_install():
 		else:
 			print("Failled to Install go-dork")
 	else:
-		print("\033[32mgau is installed")
+		print("\033[32mgo-dork is installed")
 
 
 def githubsub_install():
